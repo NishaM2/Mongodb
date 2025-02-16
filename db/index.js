@@ -1,9 +1,11 @@
-const mongoose = require('mongoose');
-const { title } = require('process');
 require("dotenv").config();
 
+const mongoose = require('mongoose');
+const { title } = require('process');
+
+const mongoURI = process.env.MONGO_URL;
 // Connect to MongoDB
-mongoose.connect(process.env.MONGO_URL);
+mongoose.connect(mongoURI);
 
 // Define schemas
 const AdminSchema = new mongoose.Schema({
